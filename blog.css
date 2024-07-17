@@ -1,0 +1,167 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.blog-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.blog-header img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.blog-header .name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.blog-content .title-input,
+.blog-content .description-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.blog-content .image-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading-input-container {
+    margin-bottom: 20px;
+}
+
+.blog-content .heading-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.blog-content .content-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.publish-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.comments-section {
+    margin-top: 50px;
+}
+
+.comments-section .add-comment {
+    margin-bottom: 20px;
+}
+
+.comments-section .add-comment input,
+.comments-section .add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comments-section .add-comment button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.comments-section .comment {
+    margin-bottom: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.comments-section .comment .user {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comments-section .comment .reply {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer .updates,
+.footer .follow {
+    margin-bottom: 20px;
+}
+
+.footer .updates button,
+.footer .follow button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer .legal {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.footer .legal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
