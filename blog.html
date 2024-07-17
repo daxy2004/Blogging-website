@@ -217,8 +217,8 @@
             if (tagName) {
                 addTag(tagName);
                 customTagInput.value = '';
+            }
         }
-    }
     </script>
 </head>
 <body>
@@ -232,7 +232,7 @@
             </div>
             <div class="blog-actions">
                 <button onclick="likePost()"><i class="fas fa-thumbs-up"></i> Like <span class="like-count">0</span></button>
-                <button><i class="fas fa-message"></i> Message</button>
+                <button onclick="window.location.href='message.html'"><i class="fas fa-message"></i> Message</button>
                 <button onclick="sharePost()"><i class="fas fa-share"></i> Share <span class="share-count">0</span></button>
             </div>
             <div class="image-upload">
@@ -270,9 +270,9 @@
             <div class="banner-item">
                 <img src="user1.jpg" alt="Nami">
                 <div class="name">Nami</div>
-                <div class="description">Top class restaurants...</div>
-            </div>
-            <div class="banner-item">
+                <div class="description">top class restaurants..</div>
+                </div>           
+                <div class="banner-item">
                 <img src="user2.jpg" alt="Zoro">
                 <div class="name">Zoro</div>
                 <div class="description">Is AI a threat..</div>
@@ -286,3 +286,4 @@
     </div>
 </body>
 </html>
+
