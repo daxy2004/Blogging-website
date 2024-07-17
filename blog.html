@@ -131,6 +131,26 @@
         .publish-button:hover {
             background-color: #000000;
         }
+        .tags-container {
+            margin-top: 10px;
+        }
+        .tags-container label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .tags-container input[type="checkbox"] {
+            display: none;
+        }
+        .tags-container label {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tags-container label:hover {
+            background-color: #f0f0f0;
+        }
     </style>
     <script>
         let likeCount = 0;
@@ -181,6 +201,24 @@
         });
         window.addEventListener('resize', adjustImagePlaceholder);
         window.addEventListener('input', adjustImagePlaceholder);
+
+        function addTag(tagName) {
+            console.log(`Adding tag: ${tagName}`);
+            const tagsContainer = document.querySelector('.tags-container');
+            const tag = document.createElement('label');
+            tag.textContent = `#${tagName}`;
+            tagsContainer.appendChild(tag);
+        }
+
+        function addCustomTag() {
+            console.log('addCustomTag called');
+            const customTagInput = document.getElementById('custom-tag');
+            const tagName = customTagInput.value.trim();
+            if (tagName) {
+                addTag(tagName);
+                customTagInput.value = '';
+        }
+    }
     </script>
 </head>
 <body>
@@ -212,6 +250,14 @@
             <div class="heading-input-container">
                 <input type="text" class="heading-input" placeholder="Heading 3">
                 <textarea class="content-input" placeholder="Write your content here..."></textarea>
+            </div>
+            <div class="tags-container">
+                <label for="food" onclick="addTag('food')">#food</label>
+                <label for="money" onclick="addTag('money')">#money</label>
+                <label for="tech" onclick="addTag('tech')">#tech</label>
+                <label for="fitness" onclick="addTag('fitness and health')">#fitness and health</label>
+                <input type="text" id="custom-tag" placeholder="Add custom tag">
+                <button onclick="addCustomTag()">Add</button>
             </div>
             <button class="publish-button">Publish Blog</button>
             <div class="blog-actions">
