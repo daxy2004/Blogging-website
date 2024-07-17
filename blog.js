@@ -27,9 +27,28 @@ function previewImage(event) {
                 }
                 img.width = newWidth;
                 img.height = newHeight;
+                adjustImagePlaceholder(); // Call adjustImagePlaceholder here
             };
             imagePlaceholder.appendChild(img);
         };
         reader.readAsDataURL(file);
+    }
+}
+
+function addTag(tagName) {
+    console.log(`Adding tag: ${tagName}`);
+    const tagsContainer = document.querySelector('.tags-container');
+    const tag = document.createElement('label');
+    tag.textContent = `#${tagName}`;
+    tagsContainer.appendChild(tag);
+}
+
+function addCustomTag() {
+    console.log('addCustomTag called');
+    const customTagInput = document.getElementById('custom-tag');
+    const tagName = customTagInput.value.trim();
+    if (tagName) {
+        addTag(tagName);
+        customTagInput.value = '';
     }
 }
