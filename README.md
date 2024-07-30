@@ -35,4 +35,5 @@ BACKEND REQUIREMENTS:
 7. Tags: The tags used by the users should be be displayed in this section and also redirect to the page which has the respective tags when clicked on a specific tag.
 8. Read more: These pages should lead to the blog page. As of now we have hardcoded the pages but when a user publishes a blog it should get stored in the backend server and should be displayed on the respective pages.
 
-9. Refer the documentation file in the github repository to know more functionality in detail. 
+
+ Refer the documentation file in the github repository to know more functionality in detail. 
