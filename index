@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        .latest-posts, .trending-posts {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .latest-posts .post, .trending-posts .post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+        }   
+        .latest-posts .post-info, .trending-posts .post-info {
+            flex-grow: 1;
+        }
+        .tags {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .tags button {
+            background: #fffdfd;
+            border: none;
+            box-shadow: 1px 1px 4px rgb(223, 220, 220), -1px -1px 4px rgb(223, 220, 220), 1px -1px 4px rgb(223, 220, 220), -1px 1px 4px rgb(223, 220, 220);
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .read-more {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            text-decoration: none;
+        }
+           .latestdp{
+            width: 30px;
+            height: 30px;
+            float:left;
+            margin-top:10px;
+            border-radius: 50%;
+            margin-right: 10px;
+           }
+           .latestpic{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            float:left;
+            margin-bottom: 50px;
+            margin-right: 10px;
+
+           }
+           .latestpro{
+            width: 200px;
+            height: 160px;
+            border-radius: 10px;
+            margin-right: 20px;
+            margin-top: 5px;
+
+           }
+           #img1{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            float:left;
+            margin-right: 10px;
+            margin-bottom: 65px;
+
+           }
+           #img2{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            float:left;
+            margin-right: 10px;
+            margin-bottom: 85px;
+
+           }
+           #img3{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            float:left;
+            margin-right: 10px;
+            margin-bottom: 85px;
+
+           }
+           .Heading{
+            text-align: center;
+            color: grey;
+           }
+           .latestpostbutton{
+            border-radius: 30px;
+            border: none;
+            height: 25px;
+            width: 80px;
+            box-shadow: 1px 1px 4px rgb(223, 220, 220), -1px -1px 4px rgb(223, 220, 220), 1px -1px 4px rgb(223, 220, 220), -1px 1px 4px rgb(223, 220, 220);
+            background-color: #ffffff;
+            margin-right: 10px;
+            font-size: x-small;
+            cursor: pointer;
+           }
+           .para{
+            color: rgb(0, 0, 0);
+            style: bold;
+            font-size: 20px;
+           }
+           .paralat{
+            color: grey;
+            font-size: 16px;
+
+           }
+           .Headinglast{
+            color: grey;
+           }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="latest-posts">
+                <h2 class="Heading">Latest Posts</h2>
+                <div class="post">
+                    <img src="Daily.jpg" class="latestpro">
+                    <div class="post-info">
+                        <img src="nami.jpg"  class="latestdp" alt="Daily Routine To Be Followed">
+                        <p class="paralat"><strong>Nami</strong> | Mar 10 | 7 min read</p>
+                        <h2>Daily Routine To Be Followed</h2>
+                        <p class="paralat">Ut enim ad minima venima,quis nostrum exercitationem ullam corporis suscipit laboriosam , nisi ut al.</p>
+                        <button class="latestpostbutton"> Health</button>  <button class="latestpostbutton">Workout</button>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="post">
+                    <img src="Health.png" class="latestpro">
+                   <div class="post-info">
+                        <img src="arlene.jpg"  class="latestdp"  alt="Healthy Lifestyle">
+                        <p class="paralat"><strong>Arlene</strong> | Mar 15 | 7 min read</p>
+                        <h2>Healthy Lifestyle</h2>
+                        <p class="paralat">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugist , sed quia consequuntur</p>
+                        <button class="latestpostbutton">Diet</button>  <button class="latestpostbutton">Health</button>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="post">
+                    <img src="Morning.jpg" class="latestpro">
+                    <div class="post-info">
+                        <img src="dianne.jpg"  class="latestdp" alt="Morning Routine">
+                        <p class="paralat"><strong>Dianne</strong> | Apr 20 | 7 min read</p>
+                        <h2>Morning Routine</h2>
+                        <p class="paralat">Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore... </p>
+                        <button class="latestpostbutton">Diet</button>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="tags">
+                <h2 class="Heading">Tags</h2>
+                <button>Workout</button>
+                <button>Health</button>
+                <button>Diet</button>
+                <button>Self-Empower</button>
+            </div>
+            <div class="trending-posts">
+                <h2 class="Heading">Trending Posts</h2>
+                <div class="post">
+                    <img src="nami.jpg"  id="img1"  alt="User">
+                    <div class="post-info">
+                        <h3 class="Headinglast">Nami</h3>
+                        <h2 class="para">Best worksouts to transform your body from fat to fit</h2>
+                    </div>
+                </div>
+                <div class="post">
+                    <img src="Zoro.jpg"  id="img2" alt="User">
+                    <div class="post-info">
+                        <h3 class="Headinglast">Zoro</h3>
+                        <h2 class="para">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es</h2>
+                    </div>
+                </div>
+                <div class="post">
+                    <img src="Luffy.jpg" id="img3" alt="User">
+                    <div class="post-info">
+                        <h3 class="Headinglast">Luffy</h3>
+                        <h2 class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+body .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+.blog-header img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.blog-header .name {
+  font-weight: bold;
+  font-size: 18px;
+}
+.comments-section {
+  margin-top: 50px;
+}
+
+.comments-section .add-comment {
+  margin-bottom: 20px;
+}
+
+.comments-section .add-comment input,
+.comments-section .add-comment textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comments-section .add-comment button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.comments-section .comment {
+  margin-bottom: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.comments-section .comment .user {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comments-section .comment .reply {
+  cursor: pointer;
+  color: #007bff;
+}
+.heading-container {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+.chocolate-chip-cookie {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(105, 103, 103);
+}
+.description {
+  color: rgb(105, 103, 103);
+}
+
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.footer-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 200px;
+}
+
+.footer-updates,
+.footer-follow {
+  flex: 1;
+  min-width: 300px;
+  margin: 30px;
+  margin-top: 250px;
+}
+
+.footer-updates h2,
+.footer-follow h2 {
+  font-size: 1.6em;
+  margin-bottom: 40px;
+}
+
+.subscribe-btn {
+  margin-top: 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 15px 50px;
+  font-size: 1.3em;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.subscribe-btn:hover {
+  background-color: #ccc;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.footer-divider {
+  width: 1px;
+  height: 400px;
+  background-color: white;
+  margin: 0 50px;
+  position: relative;
+  top: 100px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons i {
+  font-size: 2.5em;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.footer-mail-box {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border: 2px solid white;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.footer-mail {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.footer-mail span {
+  font-weight: bold;
+}
+
+.footer-bottom-white {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-bottom-content {
+  margin-top: 20px;
+}
+
+.footer-nav {
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 1.2em;
+  margin-top: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    padding-bottom: 100px;
+  }
+
+  .footer-updates,
+  .footer-follow {
+    margin-top: 100px;
+  }
+
+  .footer-updates h2,
+  .footer-follow h2 {
+    font-size: 1.4em;
+  }
+
+  .subscribe-btn {
+    padding: 10px 30px;
+    font-size: 1.1em;
+  }
+
+  .footer-divider {
+    height: 200px;
+    margin: 0 30px;
+    top: 50px;
+  }
+
+  .social-icons i {
+    font-size: 2em;
+    margin: 0 15px;
+  }
+
+  .footer-mail {
+    font-size: 1em;
+  }
+
+  .footer-nav a {
+    font-size: 1em;
+  }
+
+  .footer-bottom-content {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding-bottom: 50px;
+  }
+
+  .footer-updates,
+  .footer-follow {
+    margin-top: 50px;
+    min-width: 80%;
+  }
+
+  .footer-updates h2,
+  .footer-follow h2 {
+    font-size: 1.2em;
+  }
+
+  .subscribe-btn {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
+
+  .footer-divider {
+    height: 100px;
+    margin: 0 10px;
+    top: 25px;
+  }
+
+  .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+
+  .footer-mail {
+    font-size: 0.9em;
+  }
+
+  .footer-nav a {
+    font-size: 0.9em;
+  }
+
+  .footer-bottom-content {
+    margin-top: 20px;
+  }
+}

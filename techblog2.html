@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      body {
+        
+        font-family: Arial, sans-serif;
+      }
+      header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .center-section {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        text-decoration: none;
+        color: black;
+        margin-right: 10px;
+        margin-left: 30px;
+        font-weight: bolder;
+      }
+
+      .vertical-line {
+        margin: 0 10px;
+        color: white;
+        height: 30px;
+        border-left: 1px solid black;
+      }
+
+      #search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      #search-input {
+        display: none;
+        padding: 5px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      #go-btn {
+        display: none;
+        padding: 5px 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        border: 1px solid #555;
+        background-color: #555;
+        color: white;
+        border-radius: 4px;
+      }
+
+      .show-search #search-input {
+        display: inline-block;
+      }
+
+      .show-search #go-btn {
+        display: inline-block;
+      }
+
+      .highlight {
+        border: 2px solid red;
+        background-color: yellow;
+      }
+
+      .blog-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+      }
+      .blog-header {
+        margin-bottom: 20px;
+      }
+
+      .title-input {
+        margin-top: 20px;
+      }
+      
+      .banner-container {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        }
+
+      .banner {
+        display: inline-block;
+        animation: scroll 20s linear infinite; /* Adjust animation duration as needed */
+        width: max-content;
+      }
+      .banner-item {
+        display: inline-block;
+        width: 400px; /* Adjust width of banner items */
+        padding: 20px;
+        text-align: center;
+        border-right: 1px solid #ddd;
+        margin: 0;
+      }
+      .banner-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .banner-item .name {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .banner-item .description {
+        font-size: 1.2em;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%S);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .image-placeholder img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: auto;
+        object-fit: cover;
+      }
+      .blog-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .blog-actions button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .blog-actions button:hover {
+        background-color: #00ff6a;
+      }
+      .blog-actions button i {
+        margin-right: 5px;
+      }
+      .blog-actions .like-count,
+      .blog-actions .share-count
+      .blog-actions .comment-count {
+        margin-left: 5px;
+        padding: 10px;
+      }
+      .image-upload {
+        margin: 10px 0;
+      }
+      .image-placeholder {
+        width: 100%;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .heading-input-container {
+        margin-bottom: 20px;
+      }
+      .heading-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+      .content-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+      }
+      .tags-container {
+        margin-top: 10px;
+      }
+      .tags-container label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .tags-container label {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .comments-section {
+        margin-top: 20px;
+      }
+      
+      .comments-section .add-comment {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .comments-section .add-comment button {
+        align-self: flex-start;
+      }
+      
+      .comments-section .comments-list {
+        margin-top: 20px;
+      }
+      
+      .comment {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .comment .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        }
+        
+        .comment .comment-content {
+          flex-grow: 1;
+        }
+        
+        .comment .user {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        
+        .comment .timestamp {
+          font-size: 0.85em;
+          color: #6c757d;
+          margin-bottom: 10px;
+        }
+        
+        .comment .content {
+          margin-bottom: 10px;
+        }
+        
+        .comment .actions {
+          display: flex;
+          justify-content: flex-end;
+        }
+        
+        .comment .actions button {
+          background: none;
+          border: none;
+          color: #007BFF;
+          cursor: pointer;
+        }
+        .comment .actions button:hover {
+            text-decoration: underline;
+        }
+        .reply {
+            margin-left: 50px;
+            padding: 10px;
+            border-left: 2px solid #ccc;
+            display: flex;
+            align-items: flex-start;
+        }
+        .reply .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .reply .comment-content {
+            flex-grow: 1;
+        }
+        </style>
+        <script>
+          let likeCount = 0;
+          let shareCount = 0;
+          let commentCount = 0;
+      
+          function previewImage(event) {
+              const imagePlaceholder = document.querySelector(".image-placeholder");
+              imagePlaceholder.innerHTML = "";
+              const file = event.target.files[0];
+              if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function (e) {
+                      const img = document.createElement("img");
+                      img.src = e.target.result;
+                      img.style.width = "100%";
+                      img.style.height = "auto";
+                      img.style.objectFit = "cover";
+                      imagePlaceholder.appendChild(img);
+                  };
+                  reader.readAsDataURL(file);
+              }
+          }
+      
+          function adjustImagePlaceholder() {
+              const heading1 = document.querySelector(".heading-input");
+              const imagePlaceholder = document.querySelector(".image-placeholder");
+              imagePlaceholder.style.width = heading1.clientWidth + "px";
+          }
+      
+          function updateCounts() {
+              document.querySelector(".like-count").textContent = likeCount;
+              document.querySelector(".share-count").textContent = shareCount;
+              document.querySelector(".comment-count").textContent = commentCount;
+          }
+      
+          function likePost() {
+              likeCount++;
+              updateCounts();
+          }
+      
+          function commentPost() {
+              commentCount++;
+              updateCounts();
+              window.open("message.html", "_blank"); // Open message page in new tab
+          }
+      
+          function sharePost() {
+              shareCount++;
+              updateCounts();
+              window.open("share.html", "_blank"); // Open share page in new tab
+          }
+      
+          window.addEventListener("load", () => {
+              adjustImagePlaceholder();
+              updateCounts();
+          });
+      
+          function loadComments(commentsSection) {
+              commentsSection.innerHTML = '';
+              const comments = JSON.parse(localStorage.getItem('comments')) || [];
+              comments.forEach((comment, index) => {
+                  const commentElement = createCommentElement(comment, index);
+                  commentsSection.appendChild(commentElement);
+              });
+          }
+      
+          function createCommentElement(comment, index) {
+              const commentElement = document.createElement('div');
+              commentElement.className = 'comment';
+              commentElement.innerHTML = `
+                  <img src="user1.jpg" alt="User Avatar" class="user-avatar">
+                  <div class="comment-content">
+                      <div class="user">User ${index + 1}</div>
+                      <div class="timestamp">1 month ago</div>
+                      <div class="content">${comment}</div>
+                      <div class="actions">
+                          <button onclick="replyToComment(${index})">Reply</button>
+                      </div>
+                  </div>
+              `;
+              return commentElement;
+          }
+      
+          function addComment() {
+              const commentInput = document.querySelector('.add-comment textarea');
+              const comments = JSON.parse(localStorage.getItem('comments')) || [];
+              if (commentInput.value.trim()) {
+                  comments.push(commentInput.value.trim());
+                  localStorage.setItem('comments', JSON.stringify(comments));
+                  commentInput.value = '';
+                  loadComments(document.querySelector('.comments-section .comments-list'));
+              }
+          }
+      
+          function replyToComment(index) {
+              const comments = JSON.parse(localStorage.getItem('comments'));
+              const reply = prompt('Reply to this comment:', '');
+              if (reply !== null && reply.trim() !== '') {
+                  comments[index] += `
+                  <div class="reply">
+                      <img src="brook.png" alt="User Avatar" class="user-avatar">
+                      <div class="comment-content">
+                          <div class="user">User</div>
+                          <div class="timestamp">Just now</div>
+                          <div class="content">${reply.trim()}</div>
+                      </div>
+                  </div>`;
+                  localStorage.setItem('comments', JSON.stringify(comments));
+                  loadComments(document.querySelector('.comments-section .comments-list'));
+              }
+          }
+          document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('search-btn').addEventListener('click', function() {
+                const searchInput = document.getElementById('search-input');
+                const goButton = document.getElementById('go-btn');
+
+                if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+                    searchInput.style.display = 'inline-block';
+                    goButton.style.display = 'inline-block';
+                    goButton.classList.add('highlight');
+                    searchInput.focus();
+                } else {
+                    searchInput.style.display = 'none';
+                    goButton.style.display = 'none';
+                    goButton.classList.remove('highlight');
+                }
+            });
+
+            document.getElementById('go-btn').addEventListener('click', function() {
+                const searchInputValue = document.getElementById('search-input').value;
+
+                if (!searchInputValue) {
+                    alert('Please enter a search query.');
+                } else {
+                    alert(`No results found for "${searchInputValue}".`);
+                }
+            });
+        });
+      </script>
+    </head>
+  <body>
+    <header>
+      <nav>
+        <div class="center-section">
+          <a href="home.html" class="logo">HUB X</a>
+          <span class="vertical-line">|</span>
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" id="search-input" placeholder="Search..." />
+          <button id="go-btn">Go</button>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="blog-content">
+        <div class="taste-my-delightful-cookie-parent">
+            <h1 class="taste-my-delightful2">
+              Top 10 Games
+            </h1>
+            <div class="description">
+            <div class="Explore the recipe of best chocolate chip cookies">
+                <h4 class="taste-my-delightful2">
+                    A Comprehensive Guide
+                </h4>
+                <div class="blog-header">
+                  <img src="IShowSpeed-4.webp" alt="User Image" />
+                  <div class="name">Philip</div>
+        </div>
+        <div class="blog-actions">
+          <button onclick="likePost()">
+            <i class="fas fa-thumbs-up"></i> Like
+            <span class="like-count">0</span>
+          </button>
+          <button onclick="commentPost()">
+            <i class="fa-solid fa-comment"></i> Comment
+            <span class="comment-count">0</span>
+          </button>
+          <button onclick="sharePost()">
+            <i class="fas fa-share"></i> Share
+            <span class="share-count">0</span>
+          </button>
+        </div>
+        <div class="blog-image">
+            <img src="OIP.jpeg" alt="User Image" />
+        </div>
+        <div class="heading-container">
+            <h1>The Witcher 3: Wild Hunt</h1>
+            </div>
+            <div>
+            <p class="chocolate-chip-cookie"> 
+                A chocolate chip cookie is a sweet baked treat that is recognized by its butter flavor and the inclusion of chocolate chips. Some variations can include nuts, oatmeal or raisins as well. Commercially available formats of chocolate chips cookies include:1,2</p>
+                <ul style = font-size:20px;font-weight:bold;color:rgb(105,103,103);>
+                    <li style="margin-bottom: 10px;">Fresh</li>
+                    <li style="margin-bottom: 10px;">Packaged</li>
+                    <li style="margin-bottom: 10px;">Frozen dough</li>
+                </ul>
+
+            <p style = "font-size:20px;font-weight:bold;color:rgb(105,103,103)">
+                Common variations of chocolate chip cookies include:
+            </p>
+            <ul style = font-size:20px;font-weight:bold;color:rgb(105,103,103);>
+                <li style="margin-bottom: 10px;">Chewy</li>
+                <li style="margin-bottom: 10px;">Crispy</li>
+                <li style="margin-bottom: 10px;">Chunky</li>
+            </ul>
+        </div>
+        <div class="heading-container">
+            <h1>Commercial production</h1>
+        </div>
+        <div>
+            <p class="chocolate-chip-cookie"> 
+                Chocolate chip cookies are commercially produced through the following process:</p>
+                <ul style = font-size:20px;font-weight:bold;color:rgb(105,103,103);>
+                <li style="margin-bottom: 10px;">Scaling and weighing ingredients separately.</li>
+                <li style="margin-bottom: 10px;">First stage mixing: fat, sugars, water, salt, eggs, vanilla and leavening agent are mixed in a horizontal or vertical mixer.</li>
+                <li style="margin-bottom: 10px;">Second stage mixing: flour is added and mixing continues till homogeneous.</li>
+                <li style="margin-bottom: 10px;">Third stage mixing: chocolate chips are added and mixing continues till homogeneous.</li>
+                <li style="margin-bottom: 10px;">Fourth stage mixing: nuts are added and mixing continues till homogeneous.</li>
+                <li style="margin-bottom: 10px;">Rolling: the dough is rolled into a sheet and cut into desired shapes.</li>
+            </ul>
+        
+        </div>
+        <div class="tags-container" style="text-align: center;">
+            <label for="Software" style="display: inline-block; margin: 0 10px;">#Software</label>
+        </div>
+        <div class="blog-actions">
+          <button><i class="fas fa-arrow-right"></i> Check it out</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="banner-container">
+    <div class="banner">
+      <div class="banner-item">
+        <img src="user1.jpg" alt="Nami" />
+        <div class="name">Nami</div>
+        <div class="description">top class restaurants..</div>
+      </div>
+      <div class="banner-item">
+        <img src="user2.jpg" alt="Zoro" />
+        <div class="name">Zoro</div>
+        <div class="description">Is AI a threat..</div>
+      </div>
+      <div class="banner-item">
+        <img src="user3.jpg" alt="Fury" />
+        <div class="name">Fury</div>
+        <div class="description">My views on budget'24...</div>
+      </div>
+    </div>
+  </div>
+  <div class="comments-section">
+    <div class="add-comment">
+        <button><i class="fas fa-Comment"></i> Comment → </button>
+        <textarea placeholder="Add a comment..."></textarea>
+        <button onclick="addComment()">SEND</button>
+    </div>
+    <div class="comments-list"></div>
+  </div>
+</div>
+</div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-updates">
+        <h2>FOR UPDATES</h2>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-follow">
+        <h2>FOLLOW ON</h2>
+        <div class="social-icons">
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-square-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer-mail-box">
+      <p class="footer-mail">MAIL: <span>axxxx@gmail.com</span></p>
+    </div>
+    <div class="footer-bottom-white">
+      <div class="footer-bottom-content">
+        <div class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms and Conditions</a>
+        </div>
+        <p class="footer-copyright">© 2024 Your Website Name</p>
+      </div>
+    </div>
+  </footer>
+</html>
